@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MNIST Prediction</title></head>
+<body style="max-width:650px;margin:3rem auto;font:16px system-ui,sans-serif;padding:0 1rem"><h1>MNIST Prediction App</h1>
+<p>Practical 10: deploy a trained MNIST model using Flask.</p>
+<form method="post"><label for="pixel_value">Enter Pixel Value (0–255):</label>
+<input id="pixel_value" type="number" name="pixel_value" min="0" max="255" value="{{ value }}" required>
+<button type="submit">Predict</button></form>
+{% if prediction is not none %}<h2>Predicted Digit: {{ prediction }}</h2>{% endif %}
+{% if error %}<p style="color:crimson">{{ error }}</p>{% endif %}
+<p><small>A constant pixel value demonstrates deployment, not realistic handwritten-digit recognition.</small></p>
+</body></html>
